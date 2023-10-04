@@ -22,12 +22,12 @@ import "../assets/main.scss";
     <div class="fixed w-full z-100">
       <header class="flex container mx-auto min-h-24 items-center justify-between">
         <a href="/" class="text-4xl">L</a>
-        <nav class="text-right flex items-center gap-6 tracking-widest">
+        <nav class="text-right flex items-center gap-6 tracking-widest [&>a]:hidden md:[&>a]:block [&>a.dot]:block">
           <a href="/journey">Journey</a>
           <a href="/skills">Skills</a>
           <a href="/experience">Experience</a>
           <a href="/works">Works</a>
-          <a href="/contact" class="text-3xl">&bull;</a>
+          <a href="/contact" class="text-3xl dot">&bull;</a>
         </nav>
       </header>
     </div>

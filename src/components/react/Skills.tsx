@@ -7,7 +7,7 @@ function SkillList({ type }) {
   return (
     <div className="flex flex-wrap mt-12 justify-center">
       {data()?.map((d, i) => (
-        <div key={i} className="text-center py-12 grid gap-6 justify-center b-dashed b-white b-opacity-10 w-1/6">
+        <div key={i} className="text-center py-12 grid gap-6 justify-center b-dashed b-white b-opacity-10 w-1/3 md:w-1/6">
           <img src={`/images/${d.icon}.png`} alt={d.name} className="h-18 mx-auto" />
           {d.name}
         </div>
@@ -22,7 +22,7 @@ export default function Skill() {
   return (
     <>
       <div
-        className="flex justify-center gap-6 uppercase text-xs tracking-[0.25rem] flex-wrap w-3/4 mx-auto
+        className="flex justify-center gap-6 uppercase text-xs tracking-[0.25rem] flex-wrap md:w-3/4 mx-auto
             [&>a]:b-solid [&>a]:b-2 [&>a]:b-white [&>a]:b-opacity-30 [&>a]:py-4 [&>a]:px-8 [&>a]:rounded-2em [&>a]:whitespace-nowrap
             [&>a:hover]:bg-orange-4 [&>a:hover]:bg-opacity-100 [&>a:hover]:text-brand-dark [&>a:hover]:font-bold [&>a:hover]:rounded-xl
             [&>a.active]:bg-orange-4 [&>a.active]:text-brand-dark [&>a.active]:font-bold [&>a.active]:rounded-xl"

@@ -8,16 +8,16 @@ import { journey } from "../data";
     !!journey.length &&
       journey.map((d) => (
         <div class="grid grid-cols-5">
-          <h4 class="text-6xl font-bold text-right pr-16 -mt-1">{d.year}</h4>
-          <div class="col-span-4 b b-l-dashed min-h-16 pl-16 pt-2 pb-20 relative">
-            <div class="b-6 b-solid b-pink-5 h-8 w-8 rounded-full absolute -left-6 top-0 bg-brand-dark" />
-            <div class="grid grid-cols-4 gap-6 leading-loose">
+          <h4 class="text-6xl font-bold text-right pr-16 -mt-16 md:-mt-1">{d.year}</h4>
+          <div class="col-span-4 b b-l-dashed min-h-16 pl-6 md:pl-16 pt-2 pb-28 md:pb-20 relative">
+            <div class="b-6 b-solid b-pink-5 h-8 w-8 rounded-full absolute -left-4 md:-left-6 top-0 bg-brand-dark" />
+            <div class="grid md:grid-cols-4 gap-6 leading-loose">
               <div class="text-lg">
                 {d.tools.map((tool) => (
                   <div class="mb-2">- {tool.name}</div>
                 ))}
               </div>
-              <div class="col-span-3 opacity-50">{d.story}</div>
+              <div class="col-span-3 opacity-50 hidden md:block">{d.story}</div>
             </div>
             <div class="pt-6 flex gap-3 [&_img]:h-9">
               {d.tools[0]?.icon &&
