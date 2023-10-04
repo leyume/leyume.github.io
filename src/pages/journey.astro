@@ -1,0 +1,34 @@
+---
+import Sect from "../layouts/Sect.astro";
+import { journey } from "../data";
+---
+
+<Sect layout_title="My Journey \ Leye " title="Journey" cls="bg-white bg-opacity-20">
+  {
+    !!journey.length &&
+      journey.map((d) => (
+        <div class="grid grid-cols-5">
+          <h4 class="text-6xl font-bold text-right pr-16 -mt-1">{d.year}</h4>
+          <div class="col-span-4 b b-l-dashed min-h-16 pl-16 pt-2 pb-20 relative">
+            <div class="b-6 b-solid b-pink-5 h-8 w-8 rounded-full absolute -left-6 top-0 bg-brand-dark" />
+            <div class="grid grid-cols-4 gap-6 leading-loose">
+              <div class="text-lg">
+                {d.tools.map((tool) => (
+                  <div class="mb-2">- {tool.name}</div>
+                ))}
+              </div>
+              <div class="col-span-3 opacity-50">{d.story}</div>
+            </div>
+            <div class="pt-6 flex gap-3 [&_img]:h-9">
+              {d.tools[0]?.icon &&
+                d.tools.map((tool) => (
+                  <a>
+                    <img src={`/images/${tool.icon}.png`} height="42" />
+                  </a>
+                ))}
+            </div>
+          </div>
+        </div>
+      ))
+  }
+</Sect>

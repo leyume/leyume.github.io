@@ -1,0 +1,61 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+import { ViewTransitions } from "astro:transitions";
+import "../assets/main.scss";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/images/logo.png" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="fixed w-full z-100">
+      <header class="flex container mx-auto min-h-24 items-center justify-between">
+        <a href="/" class="text-4xl">L</a>
+        <nav class="text-right flex items-center gap-6 tracking-widest">
+          <a href="/journey">Journey</a>
+          <a href="/skills">Skills</a>
+          <a href="/experience">Experience</a>
+          <a href="/works">Works</a>
+          <a href="/contact" class="text-3xl">&bull;</a>
+        </nav>
+      </header>
+    </div>
+    <ViewTransitions />
+    <main class="overflow-hidden">
+      <slot />
+    </main>
+  </body>
+</html>
+<style is:global>
+  :root {
+    --accent: 136, 58, 234;
+    --accent-light: 224, 204, 250;
+    --accent-dark: 49, 10, 101;
+    --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), rgb(var(--accent-light)) 30%, white 60%);
+  }
+  html {
+    font-family: system-ui, sans-serif;
+  }
+  code {
+    font-family:
+      Menlo,
+      Monaco,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace;
+  }
+</style>

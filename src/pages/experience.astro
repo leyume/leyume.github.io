@@ -1,0 +1,43 @@
+---
+import Sect from "../layouts/Sect.astro";
+import { experience } from "../data";
+---
+
+<Sect layout_title="My Experience \ Leye" title="Experience" cls="bg-rose-8 bg-opacity-40">
+  {
+    experience.map((exp) => (
+      <div>
+        <div class="grid grid-cols-4">
+          <h4 class="text-5xl font-bold text-right pr-16 -mt-5">
+            <div class="text-3xl">{exp.year.from} -</div>
+            {exp.year.to}
+          </h4>
+          <div class="col-span-3 b b-l-dashed pl-16 pb-8 relative">
+            <div class="b-6 b-solid b-pink-5 h-8 w-8 rounded-full absolute -left-5.5 top-0 bg-brand-dark" />
+            <h3 class="font-semibold mt-0">{exp.company.name}</h3>
+          </div>
+        </div>
+
+        {exp.company.contracts.map((contract) => (
+          <div class="grid grid-cols-4">
+            <h4 class="text-lg text-pink-4 font-semibold text-right pr-16">
+              {contract.from} - {contract.to}
+            </h4>
+            <div class="col-span-3 b b-l-dashed min-h-16 pl-16 pb-8 relative">
+              <div class="b-3 b-solid b-blue-5 h-4 w-4 rounded-full absolute -left-3 top-2 bg-brand-dark" />
+              <div class="pt-0.5">
+                <h5 class="font-semibold text-blue-5 text-2xl mt-0">{contract.role}</h5>
+                <div class="mb-2 italic opacity-50">{contract.headline}</div>
+                <ul class="p-0 pl-4 pr-20 text-justify [&>li]:mb-4 font-light text-sm">
+                  {contract.impacts.map((impact) => (
+                    <li>{impact}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    ))
+  }
+</Sect>

@@ -1,0 +1,48 @@
+---
+import Sect from "../layouts/Sect.astro";
+import { certifications, courses } from "../data";
+import { map } from "astro/zod";
+---
+
+<Sect layout_title="My Education \ Leye" title="Education" cls="bg-orange-5 bg-opacity-40">
+  <h3 class="text-blue-4 font-semibold text-5xl">Electrical Electronics Engineering</h3>
+  <div class="flex gap-8 pt-8 items-start">
+    <img src="/images/yaba-logo.png" alt="YABA" class="w-42" />
+    <div class="flex-grow">
+      <h4 class="text-4xl font-semibold">Yaba College of<br />Technology</h4>
+      <div class="text-pink-5 text-xl">WES Evaluated</div>
+    </div>
+    <div class="text-orange-4 text-xl pt-2">2003-2008</div>
+  </div>
+
+  <div class="pt-12 mt-12 b-0 b-t-1 b-white b-opacity-30 b-solid">
+    <div class="grid grid-cols-2">
+      <div>
+        <h3 class="font-semibold text-4xl">Certifications</h3>
+        <div class="italic opacity-70">Some certifications</div>
+        {
+          certifications.map((cert) => (
+            <div class="pt-6">
+              <h4 class="text-blue-4 text-2xl font-semibold mb-0">{cert.course}</h4>
+              <div class="opacity-70">{cert.institute}</div>
+              <div class="text-orange-4 text-xl pt-2">{cert.year}</div>
+            </div>
+          ))
+        }
+      </div>
+      <div>
+        <h3 class="font-semibold text-4xl">Courses \ Trainings</h3>
+        <div class="italic opacity-70">Books, Lynda, YouTube, LinkedIn, Udemy, Packt, Egghead.io etc</div>
+        {
+          courses.map((course) => (
+            <div class="pt-6">
+              <h4 class="text-xl font-semibold mb-0">{course.course}</h4>
+              <div class="text-blue-4 text-sm">{course.details}</div>
+              <div class="text-orange-4 text-xl pt-2">{course.year}</div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</Sect>

@@ -1,0 +1,35 @@
+---
+interface Props {
+  layout_title: string;
+  title: string;
+  cls?: string;
+}
+
+const { layout_title, title, cls } = Astro.props;
+
+import Layout from "./Layout.astro";
+---
+
+<Layout title={layout_title}>
+  <div
+    class="[&>section]:mt-1 [&>section]:transition-all [&>section]:duration-500
+    [&_.lbl]:grid [&_.lbl]:pt-4 [&_.lbl]:text-4xl [&_.lbl]:uppercase [&_.lbl]:tracking-[0.5rem] [&_.lbl]:items-center [&_.lbl]:min-h-68 [&_.lbl]:relative"
+  >
+    <div>
+      <section class={cls} transition:name={`${title.toLowerCase()}-banner`}>
+        <div class="container lbl">
+          <h2 class="text-right font-normal text-3xl">{title}</h2>
+          <div
+            class="text-brand-dark text-9rem leading-none font-bold capitalize absolute right-0 -bottom-7 tracking-[-0.5rem]"
+            transition:name={`${title.toLowerCase()}-title`}
+          >
+            {title}
+          </div>
+        </div>
+      </section>
+      <section class="py-24 container">
+        <slot />
+      </section>
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,54 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Meet the Leye, the Creative thoughtful Developer">
+  <!-- <Landing /> -->
+  <section class="grid grid-cols-2 container items-center pt-28">
+    <div class="leading-none">
+      <h1 transition:name="titled" class="whitespace-nowrap text-12rem font-semibold text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-blue-500">
+        L eye
+      </h1>
+      <h4 class="tracking-[0.5rem] opacity-50 font-normal">Leye Oluwaleimu</h4>
+      <div class="text-2xl tracking-[0.7rem] font-normal">FULLSTACK DEV</div>
+    </div>
+    <div class="h-[calc(70vh)]">
+      <img src="/LI_.png" alt="L eye" class="h-full" />
+    </div>
+  </section>
+  <div class="bg-gradient-to-r from-rose-500 to-blue-500 h-1"></div>
+  <section class="container flex justify-between h-[calc(20vh)] text-center items-center text-sm font-light opacity-75 tracking-[0.75rem]">
+    <div>FRONTEND</div>
+    <div>BACKEND</div>
+    <div>DEVOPS</div>
+    <div>UI / UX</div>
+  </section>
+  <div
+    class="[&>section]:mt-1 [&>section]:transition-all [&>section]:duration-500
+          [&_.lbl]:flex [&_.lbl]:justify-between [&_.lbl]:tracking-[0.5rem] [&_.lbl]:items-center
+          [&_.lbl]:text-4xl [&_.lbl:hover]:text-3xl [&_.lbl:hover]:text-opacity-40 [&_.lbl:hover]:text-white
+          [&_.lbl]:uppercase [&_.lbl]:min-h-48 [&_.lbl]:relative
+          [&_.lbl:hover>div]:text-6xl [&_.lbl:hover>div]:i-svg-spinners-pulse-multiple"
+  >
+    <section class="bg-white bg-opacity-10 hover:bg-opacity-20" transition:name="journey-banner">
+      <a href="/journey" class="container lbl" transition:name="journey-title">Journey <div class="i-solar-history-broken"></div></a>
+    </section>
+
+    <section class="bg-purple-4 bg-opacity-10 hover:bg-opacity-30" transition:name="skills-banner">
+      <a href="/skills" class="container lbl" transition:name="skills-title">Skills <div class="i-solar-code-square-line-duotone"></div></a>
+    </section>
+
+    <section class="bg-rose-7 bg-opacity-20 hover:bg-opacity-30" transition:name="experience-banner">
+      <a href="/experience" class="container lbl" transition:name="experience-title">Experience<div class="i-solar-case-minimalistic-line-duotone"></div></a>
+    </section>
+    <section class="bg-green-4 bg-opacity-20 hover:bg-opacity-30" transition:name="works-banner">
+      <a href="/works" class="container lbl" transition:name="works-title">Works<div class="i-solar-stars-minimalistic-line-duotone"></div></a>
+    </section>
+    <section class="bg-orange-5 bg-opacity-30 hover:bg-opacity-40" transition:name="education-banner">
+      <a href="/education" class="container lbl" transition:name="education-title">Education<div class="i-solar-square-academic-cap-2-line-duotone"></div></a>
+    </section>
+    <section class="bg-blue-5 bg-opacity-50 hover:bg-opacity-40" transition:name="contact-banner">
+      <a href="/contact" class="container lbl" transition:name="contact-title">Contact<div class="i-solar-chat-round-line-broken"></div></a>
+    </section>
+  </div>
+</Layout>

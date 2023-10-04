@@ -1,0 +1,7 @@
+{
+  "scss.lint.unknownAtRules": "ignore",
+  // "windicss.lint.unknownAtRules": "ignore",
+  // "scss.validate": false,
+  "unocss.root": ".",
+  // "editor.tabSize": 2
+}
