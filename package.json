@@ -7,7 +7,7 @@
     "devx": "astro dev --port 12002 --host",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
+    "preview": "astro preview --port 12003 --host",
     "astro": "astro"
   },
   "dependencies": {
